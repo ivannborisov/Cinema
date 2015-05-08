@@ -11,7 +11,7 @@ def main():
     cinema_db_manager = CinemaDatabaseManager(conn)
     client_interface = Cli(cinema_db_manager)
 
-    client_interface.run_command('showmovies')
+    client_interface.run_command('showmovieprojections')
 
 if __name__ == "__main__":
     main()

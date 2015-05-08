@@ -11,10 +11,15 @@ class Cli:
 
         self.commands = {
             "showmovies": self.__movie.showmovies,
-            "showmovieprojections": self.__movie,
+            "showmovieprojections": self.__movie.showmovieprojections,
             "make_reservation": self.__reservation
         }
 
     def run_command(self, command):
         class_com = self.commands[command]
-        class_com()
+        class_com(1)
+
+
+#    def start(self):
+#        while True:
+#            command = 

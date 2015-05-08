@@ -1,13 +1,13 @@
 DROP TABLE IF EXISTS movies;
 CREATE TABLE movies(
-	id PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	name TEXT,
 	rating REAL
 );
 
 DROP TABLE IF EXISTS projections;
 CREATE TABLE projections(
-	id PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	movie_id INTEGER,
 	type TEXT,
 	date_p DATE,
@@ -17,7 +17,7 @@ CREATE TABLE projections(
 
 DROP TABLE IF EXISTS reservations;
 CREATE TABLE reservations(
-	id PRIMARY KEY,
+	id INTEGER PRIMARY KEY,
 	username TEXT,
 	projection_id INTEGER,
 	row INTEGER,
