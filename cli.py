@@ -10,14 +10,28 @@ class Cli:
         self.__reservation = Reservation(db_manager, self.__movie)
 
         self.commands = {
-            "showmovies": self.__movie.showmovies,
-            "showmovieprojections": self.__movie.showmovieprojections,
+            "show_movies": self.__movie.showmovies,
+            "show_movie_projections": self.__movie.showmovieprojections,
             "make_reservation": self.__reservation.make_reservation
         }
 
     def run_command(self, command):
-        class_com = self.commands[command]
-        class_com()
+        command = command.split(' ')
+        class_com = self.commands[command[0]]
+        if command[0] == "show_movie_projections":
+            try:
+                class_com(command[1], command[2])
+                # print(command[1] + " " + command[2])
+            except:
+                class_com(command[1])
+        else:
+            class_com()
+
+    def start(self):
+        while True:
+            print("\nCommands: show_movies, show_movie_projections id|date , make_reservation")
+            command = input("Enter command: ")
+            self.run_command(command)
 
 
 #    def start(self):
